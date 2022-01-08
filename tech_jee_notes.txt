@@ -77,8 +77,25 @@ source
 	1 hop - take left 5 mile on www road
 destination
 
-
-
+Type of internet - wireles , wirelines
+class of internet - internat, internet, lan
+ip v4
+ipv6
+port
+dhcp
+dns
+domain name
+aws security group
+router
+wan ip
+lan ip
+load balancer
+network debugging
+	ping = if remote machine is reachable
+	telnet = if software on remote machine is reachable
+	netstat = network activity on your machine
+	tracert = delay between source and desitnation
+	
 
 ************* xml *******************
 john doe asdad asda asdsad asd asda 123234 adasd 23432423423
