@@ -96,7 +96,45 @@ network debugging
 	netstat = network activity on your machine
 	tracert = delay between source and desitnation
 	
+Hyper Text Transfer Protocol
 
+Browser(Http Client)  >>>>>>>>>>  Tomcat(http Server)
+Client 	>>>>>  john/john1! >>>>>> server
+Client 	>>>>>  lqjp/lqjp1! >>>>>> server (john/john1!)
+
+Https = secure... all data is encrypted and decrypted
+encryption = every alphabet is 2 char ahead
+decryption = every alphabet is 2 char behind
+Server send all the data by a secret code = for every character
+	add next 2 alphabet
+
+asdadq2321dfsdwesdsadafsfgdsfsdf
+
+Courier
+	Parcel : contents inside 
+	Recipt :
+		To : Receiver address
+		From : sender address
+		Content- type : glass/confidential/bio material
+		weight : 1 pound/kg
+		
+Http :
+	Body : digital content
+	Header : 
+		To : 12.234.34.12
+		From : 1.2.3.4
+		Content- type : text/html, img, video,audio, exe
+		content-length : bytes
+		
+		
+status code
+	2xx = successfully delivered.. 200 202
+	3xx = succesfully delivered by required re-direct
+	4xx = Client error.. wrong url address, unauthorized
+	5xx = server error... 500/503/505
+		
+		
+		
 ************* xml *******************
 john doe asdad asda asdsad asd asda 123234 adasd 23432423423
 meta-data.. infor about infor
@@ -195,6 +233,18 @@ public class student{
 
 onkeypress
 
+mouse : mouse enter, mouse leave, click, doubleclick, right click
+keyboard : press , down, up 
+
+inline : the html element appears 
+block : the html element appears AND put a new line after it...
+
+
+How does HTML gives control to Javascript
+	Event listeners.
+	
+How does Javascript know what customer typed on html page 
+	document.getElementById
 
 
 ********* CONTROL PASS FROM HTML TO JAVASCRIPT ***********

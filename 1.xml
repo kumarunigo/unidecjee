@@ -1,0 +1,17 @@
+<customerAddress>
+	<address   streetNumber="1234"  age="10" name="john" >
+		<street>asdasda qeqwewq</street>
+		<city>qweqweqw</city>
+		<state>
+			<county>asdad</county>
+			<district>asdasd</district>
+		</state>
+		<country>qweqew</country>
+	</address>
+	<address>
+		<street>sdf qeqwewq</street>
+		<city>sdfer</city>
+		<state>sdfdsf</state>
+		<country>sdf</country>
+	</address>
+</customerAddress>

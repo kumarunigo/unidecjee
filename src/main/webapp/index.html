@@ -1,1 +1,84 @@
-welcome to jee
+<html>
+	<script src="js/test.js"></script>	
+	<link href="css/test.css" rel="stylesheet" type="text/css"></link>
+	<div id="fullscreen">
+		
+		<div class="header">
+		welcome to jee website
+			<form action="http://localhost/loginjavaprogram">
+				<table>					
+					<tr>				
+						<td>User ID</td>			
+						<td><input   type="text" id="uid" name="uid" ></td>			
+					</tr>				
+									
+					<tr>				
+						<td>Password</td>			
+						<td><input type="password" id="pwd" name="pwd" ></td>			
+					</tr>				
+									
+					<tr>				
+						<td></td>			
+						<td><input onclick="return checkLoginForm()" type="submit" value="login"></td>			
+					</tr>				
+				</table>					
+			</form>
+		</div>
+		<div id="body">
+			<div id="filter">
+				<input type="checkbox" name="fruits" >mango</input><br>
+				<input type="checkbox" name="fruits" >banana</input><br>
+				<input type="checkbox" name="fruits" >grapes</input><br>
+				<input type="checkbox" name="fruits" >apple</input>
+				<br><br>
+				<input type="radio" name="vegetables" >onion</input><br>
+				<input type="radio" name="vegetables" >tomato</input><br>
+				<input type="radio" name="vegetables" >potato</input><br>
+				<input type="radio" name="vegetables" >carrot</input>
+				<br><br><br>
+				filter by checkbox or radio button
+				
+			</div>	
+			<div id="display">
+				<div id="leftDisplay">					
+					Reviews <textarea id="reviews" rows="10" cols="25"></textarea>asdsadadasdsa
+					<ul>
+						<li>apples</li>
+						<li>mango</li>
+						<li>grapes</li>
+						<li>banana</li>
+					</ul>
+					<ol>
+						<li>apples</li>
+						<li>mango</li>
+						<li>grapes</li>
+						<li>banana</li>
+					</ol>
+					<select>
+						<option value="java">java</option> 
+						<option value="jee">jee</option> 
+						<option value=".net">.net</option> 
+					</select>				
+				</div>
+				<div id="rightDisplay">
+					<div id="prd" 
+					onmouseover="displayInlineHide()"
+					onmouseout="displayInlineShow()">
+						<img src="images/product.png">
+					</div>
+					<div id="prd">
+						<img src="images/product.png">
+					</div>
+					<div id="prd">
+						<img src="images/product.png">
+					</div>
+				</div>
+				
+			</div>	
+		</div>
+		<div id="footer">
+		</div>
+			
+	</div>
+	
+</html>
