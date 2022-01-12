@@ -291,7 +291,55 @@ $("#user").val(); = access customer typed
 	
 document.getElementById( "user")
 $("#user")
-	
+
+<div id="one">
+	<table>
+		<tr id="two">john</tr>
+	</table>
+</div>
+READING
+$("#one").html(); = returns html code inside an html element
+				<table>
+					<tr id="two">john</tr>
+				</table>
+				
+$("#two").parent()
+
+text(); = value in the html element
+				john
+
+$("#uid").val() = customers input
+
+WRITING
+$("#uid").val("mandatory") = entered in text box
+
+
+web communication happens through "Http URL"
+Customer = httpClient/Browser
+AWS = httpServer
+
+information travel between client and server through HTTP transport
+All http communication involves Client sending request
+and server responding
+
+action
+1) URL : server communication endpoint
+2) send data : key=value pair
+		Key happens to be html element name attribute
+		value is customer input
+		separated by &
+3)How do you send data : get/post
+4)if server communication is success = ?
+5)if server communication is failed = ? 	
+
+http://asdad/login
+uid=asdsada&pwd=sdqweqwe1!
+
+
+
+
+
+
 *********************** Http ********************
 Hyper link
 HTML - Hyper Text Markup language

@@ -1,15 +1,16 @@
 <html>
-	<script src="js/test.js"></script>	
 	<link href="css/test.css" rel="stylesheet" type="text/css"></link>
-	<div id="fullscreen">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/test.js"></script>	
+	<div id="fullscreen"   >
 		
 		<div class="header">
 		welcome to jee website
-			<form action="http://localhost/loginjavaprogram">
+			<form method="post" action="http://localhost/loginjavaprogram">
 				<table>					
 					<tr>				
 						<td>User ID</td>			
-						<td><input   type="text" id="uid" name="uid" ></td>			
+						<td><input  type="text" id="uid" name="uid" ></td>			
 					</tr>				
 									
 					<tr>				
@@ -19,7 +20,7 @@
 									
 					<tr>				
 						<td></td>			
-						<td><input onclick="return checkLoginForm()" type="submit" value="login"></td>			
+						<td><input id="login" onclick="return checkLoginForm()" type="submit" value="login"></td>			
 					</tr>				
 				</table>					
 			</form>

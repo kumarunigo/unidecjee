@@ -106,7 +106,7 @@ function test(){
 
 function checkIfEmpty() {
 	var emailElement=document.getElementById("emailTextBox");
-	//var emailElement=$("#emailTextBox").val();
+	//var emailElement=$("table").val();
 	if (emailElement.value == "") {
 		alert("empty email id")
 		document.getElementById("logo").style = "background:red";
@@ -118,6 +118,8 @@ function checkIfEmpty() {
 }
 
 function checkUser() {
+	alert("in check user");
+	/*
 	var checkUserAjaxObj = {
 		url: 'http://localhost/doesUserExist',
 		type: 'post',
@@ -134,13 +136,28 @@ function checkUser() {
 		}
 	};
 	$.ajax(checkUserAjaxObj);
+	*/
+}
+function taclicked(){
+	alert("someone clicked on text area");
+}
+function checkUid(){
+	// read value from uid text box
+	var customerTypedUid=$("#uid").val();
+	if(customerTypedUid=="")
+		// writing into the uid text box
+		$("#uid").val("please type userid");
+}
+function hideLogin(){
+	$("#login").slideUp(8000);
+	$("#uid").css("background","red");
+}
+function showLogin(){
+	$("#login").slideDown(8000);
 }
 $(document).ready(function() {
-	$("#emailTextBoxReg").blur(checkUser);
-	$("#passwordTextBox").click(checkIfEmptyJquery);
-	$("#logo").mouseenter(changeLogo);
-	$("#logo").mouseleave(function() {
-		document.getElementById("logo").style = "background:grey";
-	}
-	);
+	//$("#pwd").click(hideLogin);
+	//$("#pwd").blur(showLogin);
+	$("#reviews").click(taclicked);
+	 
 });
