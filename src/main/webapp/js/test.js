@@ -118,17 +118,13 @@ function checkIfEmpty() {
 }
 
 function checkUser() {
-	alert("in check user");
-	/*
 	var checkUserAjaxObj = {
-		url: 'http://localhost/doesUserExist',
+		url: '/checkUser',
 		type: 'post',
-		data: {
-			eid: $("#emailTextBoxReg").val()
-		},
+		data: "uid="+ $("#uid").val(),
 		context: this,
 		success: function(data) {
-			if (data == "true")
+			if (data == "unavailable")
 				alert("userid already taken");
 		},
 		error: function(data) {
@@ -136,7 +132,7 @@ function checkUser() {
 		}
 	};
 	$.ajax(checkUserAjaxObj);
-	*/
+
 }
 function taclicked(){
 	alert("someone clicked on text area");
