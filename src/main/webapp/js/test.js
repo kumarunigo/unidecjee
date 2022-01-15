@@ -118,9 +118,31 @@ function checkIfEmpty() {
 }
 
 function checkUser() {
+	
+	var xmlData="<address>";
+	xmlData+="<streetNumber>2131</streetNumber>";
+	xmlData+="<streetName>dsfsdf</streetName>";
+	xmlData+="<city>sfdsf sdf</city>";
+	xmlData+="<state>dsf</state>";
+	xmlData+="<zip>sd333423</zip>";
+	xmlData+="<country>234sf</country>";
+	xmlData+="</address>";
+	
+	var jsonObject={
+		"streetNumber" : 2131,
+		"streetName": "dsfsdf",
+		"city":"sfdsf sdf",
+		"state":"dsf",
+		"zip":"sd333423",
+		"country":"234sf"
+	};
+	
+	
+	
+	
 	var checkUserAjaxObj = {
-		url: '/checkUser',
-		type: 'post',
+		url: '/IsUserAvailable',
+		type: 'get',
 		data: "uid="+ $("#uid").val(),
 		context: this,
 		success: function(data) {
@@ -152,8 +174,9 @@ function showLogin(){
 	$("#login").slideDown(8000);
 }
 $(document).ready(function() {
+	$("#uid").blur(checkUser);
 	//$("#pwd").click(hideLogin);
 	//$("#pwd").blur(showLogin);
-	$("#reviews").click(taclicked);
+	//$("#reviews").click(taclicked);
 	 
 });

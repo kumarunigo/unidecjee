@@ -1,3 +1,9 @@
+CheckUser.java = receiving from ajax to server program (text and binary response)
+test.js = ajax and json code
+JSPController / application.properties = Spring MVC
+JSP = webapp/jsp/ and 2 dependancy in pom.xml
+LoginServlet = login servlet code (redirect and forward webpage response)	
+
 internet - (WAN - worldwide area network) global computer network (billlions of device connected)
 	Wireline : copper/fiber - physical wireline / cable
 	Wireless : satelites (NOT wifi)
@@ -335,9 +341,65 @@ action
 http://asdad/login
 uid=asdsada&pwd=sdqweqwe1!
 
+call back function
+
+var checkUserAjaxObj = {
+		url: '/checkUser',
+		type: 'post',
+		data: "uid="+ $("#uid").val(),
+		context: this,
+		success: function(data) {
+			if (data == "unavailable")
+				alert("userid already taken");
+		},
+		error: function(data) {
+			console.log("failure");
+		}
+	};
+	$.ajax(checkUserAjaxObj);
+
+
+uid=john
+pwd=john1!
+
+
+address=2131 dsfsdf sfdsf sdf dsf sd333423 234sf 
+Meta - data = information about data
+<address>
+	<streetNumber>2131</streetNumber>
+	<streetName>dsfsdf</streetName>
+	<city>sfdsf sdf</city>
+	<state>dsf</state>
+	<zip>sd333423</zip>
+	<country>234sf</country>
+</address>
+var jsonObject={
+	"streetNumber" : 2131,
+	"streetName": "dsfsdf",
+	"city":"sfdsf sdf",
+	"state":"dsf",
+	"zip":"sd333423",
+	"country":"234sf"
+}
+var jsObject=JSON.parse(jsonObject); // Convert JSON into JavaScript object
+console.log(  jsObject.city  );
+
+jsObject.state="NY";
+jsonObject=JSON.stringify(jsObject); // Convert Javascript object into JSON object
 
 
 
+JSON is string represntation of Javascript object
+
+var jsObject={
+	streetNumber : 2131,
+	streetName: "dsfsdf",
+	city:"sfdsf sdf",
+	state:"dsf",
+	zip:"sd333423",
+	country:"234sf"
+}
+console.log(  jsObject.city  );
 
 
 *********************** Http ********************
@@ -515,8 +577,186 @@ status code
 	4XX : request not available/unauthorized
 	5XX : server had a problem ( server program had error/exception)
 	
+	Web Server software : Host webpage and support server java programming
+	Apache Tomcat 
+	
+WAR = website software exe file
+	webserver software tomcat 
+		+
+	html,css,js,java programs,images
+
+	glassfish
+	weblogic
+	websphere
+	jboss
+		
+		
+Launch a website
+	Web server software
+	
+	
+	
+init		= OPTIONAL alternative to constructor...  Website starts
+service	= NEVER override
+doGet	= mandatory to override(server request processing)
+doPost	= mandatory to override(server request processing) 
+destroy	= OPTIONAL ... Website shutdown
+
+redirect/forward
+mvc
+jsp
+sessions
+
+
+HTML = static webpage
+wikipedia
+JSP = dynamic webpage
+gmail, facebook
+
+Java Server Pages
+JSP = HTML + java program ( variables = change value )
+ASP = HTML + C sharp program dotnet platform
+
+
+
+
+
+Spring MVC
+	model = java program where u write logic
+	view = webpage layer... html/jsp
+	controller = routing happens...... URL to program
+	
+http://localhost/jsp/testing.jsp
+
+
+Servlet response :
+	Text response : group of character
+	Binary response : images/video/exe file download
+	webpage response : 
+		redirect
+		forwards
+	
+	
+	
+	
 	
 
+
+***********************JSP *******************
+
+<%@ page import="java.util.ArrayList" %>
+
+
+				<html>
+
+				<%
+					String userid="john";
+					String fullName="";
+					if( userid.equals("john")
+						fullName="john doe";
+					else
+						fullName="jane doe";
+					
+					request.getParameter();
+					ArrayList<String> fruits=new ArrayList<String> ();
+					fruits.add("apple");
+					fruits.add("mango");
+					fruits.add("grapes");
+					 
+				%>
+
+				welcome  <%=  fullName %>  to my website
+
+					<table>
+						<%
+							for(String s:fruits)
+							{
+						%>
+								<tr><td>   <%= s %>  </td><tr>
+						<%
+							}
+						%>
+								
+					</table>
+							
+
+				</html>
+					
+					
+	
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 **************************************** Database **************************************** 
 
 database schema
