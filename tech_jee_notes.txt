@@ -807,6 +807,63 @@ delete = ALWAYS write with where
 update = ALWAYS write with where 
 
 
+SQL = Structured Query Language
+DBA : DataBase Administrator
+	DDL : Data Definition Language
+	designing/schema changes
+		create ,delete, update database
+		create ,delete, update tables
+		create ,delete, update columns
+		
+		create = create a table
+		alter = modify a table
+		truncate = deleting all records from table but NOT table itself
+		drop = deletes all records INCLUDING table itself
+		
+		
+	DML : Data Manipulation Language
+		C : creating record in table
+		R : reading  record from table
+		U : updating record in table
+		D : deleting  record in table
+
+create database training;
+use training;
+
+create table profile(
+	userid varchar(64) , 
+    password varchar(16), 
+    address varchar(128) ,
+    isSuspended char(1)
+);
+	
+		/*
+create  record
+output : int ( number of records inserted)
+*/
+insert into profile (userid,password,address,isSuspended) 
+	values ('mike','mike!','NY','N');
+/*
+read record
+output : result set
+*/    
+select userid,password from profile
+select * from profile where userid='john'
+/*
+update query SHOULD ALWAYS HAVE WHERE CLAUSE
+output : int ( number of records updated)
+*/
+update profile set password='john2@',address='NJ' where userid='john' 
+/*
+delete query  SHOULD ALWAYS HAVE WHERE CLAUSE
+output : int (number of records deleted)
+*/
+select * from profile
+delete from profile where userid='mike'
+		
+		
+		
+		
 ************* JDBC ************
 
 Database software : internet/network based software located
