@@ -915,7 +915,21 @@ Spring data framework for interation with database
         
 	
 *********** webservice ***************
-
+Controller : server program which is mapped to http url
+	C to B
+		Servlet
+		Spring framework = @Controller
+		Struts framework
+	B to B	
+		Rest webservice
+		Soap webservice
+		
+C to B : Consumer to Business 
+	Customer visits your HTML webpage/mobile app
+	using services
+	
+B to B : Business to Business
+	WEBSERVICES	
 WSDL : Web Service Description Language 
 	neutral/language independant
 	explaination of your webservice
@@ -926,7 +940,44 @@ WSDL : Web Service Description Language
 	3) input required : schema ... complex, sequences. input in wsdl
 	4) output expected
 	
-	
+	Soap : XML
+	Input :
+		<searchFlight>
+			<source>NY</source>
+			<destination>CHICAGO</destination>
+		</searchFlight>
+	output :
+		<flightResults>
+			<flight>AA123</flight>
+			<flight>AA245</flight>
+			<flight>AA122</flight>
+		</flightResults>
+		
+Rest : http://www.aa.com/searchFlight
+	Input :
+		get : 
+			http://www.aa.com/searchFlight/NY/CHICAGO
+			http://www.aa.com/searchFlight?source=NY&destination=CHICAGO
+		post : 
+			http://www.aa.com/searchFlight
+				<searchFlight>
+					<source>NY</source>
+					<destination>CHICAGO</destination>
+				</searchFlight>
+				{
+					"source":"NY",
+					"destination":"CHICAGO"
+				}
+	Output :
+			AA123,AA245,AA122
+			<flightResults>
+				<flight>AA123</flight>
+				<flight>AA245</flight>
+				<flight>AA122</flight>
+			</flightResults>
+			{
+				"flight": [ "AA123", "AA245" ,"AA122"]
+			}				
 Soap implementation class : webservice provider program
 	program that has the logic/code of webservice.
 	@webservice
@@ -936,7 +987,7 @@ Soap stub class : webservice consumer program
 input/output : primitive data type or string (choose RPC)
 input/output : complex data type arraylist, Student (choose Document)
 
-
+SoapBinding
 RPC ; cannot be validated( does not include schema in wsdl file)
 Document ; can be validated (include schema in wsdl file)
 
@@ -957,7 +1008,51 @@ Document
 		public int add(int a, int b)
 		public int add(int a, int b,int c)
 	
+	Soap
+	WSDL = webservice description language
+	Java webservice program 
+develop
+	Top - Down approach : Expert
+		1) create/write wsdl file
+		2) generate java program out of wsdl file
+	Bottom - Up approach
+		1) create java program 
+		2) wsdl file will be generated from java program
+		
+service provider = publish
+service user       = consume
+
+xsd - xml schema definition
+, dtd
+
+Document
+public int add(ArrayList<String> a)
 	
+
+
+<flights>
+	<flight></flight>
+	<flight></flight>
+	<flight></flight>
+</flights>
+
+Document literal = operation name
+<soap:body> 
+	<xElement>5</xElement> 
+	<yElement>5</yElement> 
+</soap:body>
+
+public int add(int a, int b)
+public int sub(int a, int b)
+
+Document literal Wrapped
+<soap:body> 
+	<add> 
+		<x>5</x> 
+		<y>5</y> 
+	</add> 
+</soap:body>
+
 1) simple program
 2) write @webservice on top of the program
 3) input/output  - complex data as in arraylist, student ( style =Document)

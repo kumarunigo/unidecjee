@@ -4,6 +4,7 @@ function displayInlineHide(){
 
 function displayInlineShow(){
 	document.getElementById("reviews").style="display:inline";
+	
 }
 
 test();
