@@ -686,76 +686,7 @@ Servlet response :
 	
 		}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
 		
 **************************************** Database **************************************** 
 
@@ -861,7 +792,40 @@ output : int (number of records deleted)
 select * from profile
 delete from profile where userid='mike'
 		
+	1) Connection
+	ip,port , mysql uid and pwd
+2) choose database application
+	conn = DriverManager.getConnection
+	("jdbc:mysql://localhost:3306/training","root","root"); 
 		
+
+
+
+3) write sql queries
+	execute them
+		insert = int
+		update = int
+		delete = int 
+		select = resultset
+
+Connection conn=DatabaseConnection.getDBConnection();
+try{
+	conn.setAutoCommit(false);
+		
+		
+		insert iphone in order table
+		insert sony in order table
+		update iphone in warehouse table
+		update sony in warehouse table
+	
+	
+	conn.commit();
+}catch(Exception e){
+	conn.rollBack();
+}
+finally{
+	conn.close();
+}
 		
 		
 ************* JDBC ************

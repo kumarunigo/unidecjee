@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import java.io.IOException;
+import java.sql.Connection;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -13,21 +14,18 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginServlet extends HttpServlet{
 	
 	public void doGet(HttpServletRequest req,HttpServletResponse res) throws IOException, ServletException {
-			/*
-			 userid: john
-			password: john1!
-			*/
-		ArrayList<String> fruits=new ArrayList<String>();
 		String uid=req.getParameter("userid");
 		String pwd=req.getParameter("password");
-		
-		if(uid.equals("john") && pwd.equals("john1!"))
-		{
-			req.setAttribute("loginSuccess", true);
-			req.setAttribute("name", "john doe");
-			req.getRequestDispatcher("/success").forward(req, res);
+		boolean result=false;
+		Connection conn;
+		try {
+			conn = DatabaseConnection.getDBConnection();
+			result=UsersTable.validateLogin(uid, pwd, conn);
+			conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		else if(uid.equals("jane") && pwd.equals("jane1!"))
+		if(result == true)
 		{
 			req.setAttribute("loginSuccess", true);
 			req.setAttribute("name", "jane joe");

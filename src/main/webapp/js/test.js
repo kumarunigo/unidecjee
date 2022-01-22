@@ -174,7 +174,7 @@ function showLogin(){
 	$("#login").slideDown(8000);
 }
 $(document).ready(function() {
-	$("#uid").blur(checkUser);
+	//$("#uid").blur(checkUser);
 	//$("#pwd").click(hideLogin);
 	//$("#pwd").blur(showLogin);
 	//$("#reviews").click(taclicked);
