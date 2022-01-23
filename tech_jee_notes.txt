@@ -1042,6 +1042,42 @@ Document literal = operation name
 	<yElement>5</yElement> 
 </soap:body>
 
+Rest : http://www.aa.com/searchFlight
+	Input :
+		get : testing can be done with browser
+			http://www.aa.com/searchFlight/NY/CHICAGO
+			http://www.aa.com/searchFlight?source=NY&destination=CHICAGO
+		post : testing can be done with postman
+			http://localhost/multiply
+			{
+				"input1":10,
+				"input2":20
+			}
+				Json2Java is Java representation of above json string input
+			
+			jackson json mapper 
+				1) read json string
+				2) create Json2Java object
+					Json2Java j=new Json2Java();
+				3) it will transfer all json data into #2 object
+					j.input1=10
+					j.input2=20
+				4) it will json2Java object to your method
+			
+			public class Json2Java{
+				int input1;
+				int input2;
+				// get set methods
+			}
+			public int multiply(Json2Java aa)
+			{
+				int product=aa.input1 * aa.input2;
+				return product;
+			}
+				
+			
+			
+			
 public int add(int a, int b)
 public int sub(int a, int b)
 
