@@ -1,30 +1,19 @@
 package com.example.demo;
-
 import java.io.IOException;
-import java.sql.Connection;
-import java.util.ArrayList;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 @WebServlet("/checkUserPwd")
 public class LoginServlet extends HttpServlet{
 	
 	public void doGet(HttpServletRequest req,HttpServletResponse res) throws IOException, ServletException {
 		String uid=req.getParameter("userid");
 		String pwd=req.getParameter("password");
-		boolean result=false;
-		Connection conn;
-		try {
-			conn = DatabaseConnection.getDBConnection();
-			result=UsersTable.validateLogin(uid, pwd, conn);
-			conn.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		
+		boolean result=LoginBusiness.checkUser(uid, pwd);
+		
 		if(result == true)
 		{
 			req.setAttribute("loginSuccess", true);
