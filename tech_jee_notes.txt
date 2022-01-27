@@ -1308,6 +1308,17 @@ Strut tag libraries
 ***************** jsp and strut tag library *************
 JSP code
 
+<s:combobox label="My Fruit"  name="FruitCombo"
+    list="{'apple','banana','grape','pear'}"   value="banana" />
+
+<label>MyFruit</label>
+<select name="FruitCombo">
+	<option value="apple">apple</option>
+	<option value="banana">banana</option>
+	<option value="grape">grape</option>
+	<option value="pear">pear</option>
+</select>
+
 <%@ page import="java.util.*" %> 
 	<html> // html code
 		<body>  // html code
