@@ -1477,7 +1477,76 @@ annotation = configuration
 	Note package names of any class that has below @
 	mention these package names in component scan
 	
+Aspect : cross cutting concern
+
+public void login(String userid, String password){
 	
+	// CORE BUSINESS LOGIC
+	if(userid=="jane" && password=="jane1!")
+		sysout("succesfull login");
+	else
+		sysout("login failed");
+}
+
+additional code unrelated to core business logic YET vital to successfully
+operate the business ....
+CROSS CUTTING CONCERN
+
+Order o=new Order();
+o.checkout("iphone");
+
+package com.amazon.shopping;
+public class Order{
+	public int checkout(String prodName){
+	}
+	public int cancelOrder(){
+	}
+	public void editOrder(){
+	}
+	public void updateOrder(){
+	}
+}
+
+package com.amazon.Login;
+public class Profile{
+	public int login(String uid,String pwd){
+	}
+	public int changePwd(String pwd){
+	}
+	public void register(String uid,String pwd){
+	}
+}
+
+Advice = specfies WHEN to add extra code
+
+Before – takes parameter joinPoint. Is procesed before joinpoint.
+		add extra code before targeted method
+
+After – takes parameter joinPoint. Is procesed after joinpoint, either after successful process or exception.
+		add extra code after targeted method
+
+Around – takes parameter joinPoint. Is procesed after joinpoint, either after successful process or exception.
+		add little bit extra code before targeted method AND litlle extra code after as well
+
+AfterReturning – takes parameter joinPoint. Is procesed only if successful execution.
+		add extra code when successful completion
+
+AfterThrowing – takes parameter joinPoint. Is procesed only if exception.
+		add extra code after there is an exception
+
+
+
+
+
+@AfterThrowing("within(com.amazon..*)")
+	public void commonErrorMessage( ) throws Throwable{
+		sysout("we are facing technical difficulties, please try again later");
+	}
+	
+	
+	
+	
+		
 Spring annotation
 	@configuration
 	@component
