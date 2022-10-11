@@ -93,3 +93,73 @@ Spring boot project
 html : primarily focus on input
 css : alignment, color, background, animation
 
+********javascript********
+Java - variable
+	variable Data type
+		int age=25;
+		float weight=12.3;
+		String name="john";
+		Address addr=new Address();
+		
+		public class Address{
+			String city; int zip; String street;
+		}
+Javascript - variable
+		var age=25;
+		var weight=12.3;
+		var name="john";
+		var addr={
+			city:"ny",
+			zip:12345,
+			street:"123 house"
+		};
+		
+Java - method
+	public int add(int a, int b){
+		int sum=a+b;
+		return sum;
+	}
+		
+Javascript - functions
+	function add( a,  b){
+		var sum=a+b;
+		return sum;
+	}
+operators
+	var a=10;
+	var b=10;
+	var c= a * b; // RHS if there is a variable. replace their value
+		var c= 10 * 5;  // RHS if there is an expression.. solve the expression
+		var c=50;
+	
+control flows
+	if ( a==b)
+		console.log( " a and b are same");
+	else
+		console.log( " a and b are different ");
+	
+	for( var i=0; i <2; i++){
+		console.log("hi");
+	}
+	while
+	do-while
+	switch-case
+	
+exception handling
+	var x=10;
+	var y=0;
+	try{
+		var z=x/y;
+		console.log("1"); // optional block... when no exceptino occurs
+	}
+	catch(err){ // optional block... when exception/error occurs
+		console.log("2");
+	}
+	finally{ // mandatory block
+		console.log("3");
+	}
+	
+	
+	
+	
+	

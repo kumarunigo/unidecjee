@@ -1,14 +1,44 @@
 #entireScreen{
 	height:100%;
 	width:100%;
-	background:yellow;
+
+}
+
+#filter{
+	font-size:25;
+	height:100%;
+	width:10%;
+	background:#F4D03F;
+	float:left;
+	color:green;
+	font-family:helvetica;
 }
 #header{
 	height:10%;
-	width:100%;
-	background:#D4AC0D ;
+	width:98%;
+	background:green ;
+	border:solid;
+	color:yellow;
+	font-family:arial;
+	display:block;
+	text-align:right;
 }
-
+#product:hover{
+/*  mouse movement on product */	
+	border:solid;
+	transform:rotate(90deg); 
+	transition-duration: 15s;
+}
+#product{
+	border-radius:5px;
+	background : red;
+	height:30%;
+	width:20%;
+	float:left;
+	margin:1%; /* spaces outside the division */
+	padding-left:8%; /* spaces inside the division */
+	padding-top:3%;
+}
 #body{
 	height:80%;
 	width:100%;
@@ -21,17 +51,11 @@
 	background:#F1C40F;
 }
 
-#filter{
-	height:100%;
-	width:10%;
-	background:#F4D03F;
-	float:left;
-}
-
 
 #productDisplay{
 	height:100%;
 	width:90%;
 	background:white;
 	float:left;
+	
 }
