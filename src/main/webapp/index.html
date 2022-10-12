@@ -2,22 +2,22 @@
 	<body>
 		<link href="index.css" rel="stylesheet" type="text/css"></link>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-			<script src="js/test.js"></script>  
+			<script src="test.js"></script>  
 			<div id="entireScreen">
 			<div id="header" >
-				<form action="">
+				<form action="/test">
 					<table>				
 						<tr>			
-							<td>	Userid	</td>
-							<td>	<input type="text"></input>	</td>
+							<td>	 Userid	</td>
+							<td>	<input type="text" id="uid"></input>	</td>
 						</tr>			
 						<tr>			
-							<td>	Password	</td>
-							<td>	<input type="password"></input>	</td>
+							<td>	 Password	</td>
+							<td>	<input type="password" onblur="testClick()"  class="pwd"></input>	</td>
 						</tr>			
 						<tr>			
 							<td>		</td>
-							<td>	<input type="submit" value="login">	</td>
+							<td>	<input id="loginButton" type="submit" value="login">	</td>
 						</tr>			
 					</table>				
 

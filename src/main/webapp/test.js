@@ -1,3 +1,38 @@
+function isUseridTaken(){
+	var uid=document.getElementById("uid").value;
+	if(uid=="john1234")
+		alert("userid is taken");
+
+}
+
+function testClick(){
+	// javascript accessing html element(userid text box)
+	//var uid=document.getElementById("uid").value;
+	
+	// jquery accessing html element(userid text box)
+	var uid=$("#uid").val(); // accessing by id attribute
+	var pass=$(".pwd").val(); // accessing by class attribute
+	// $("textarea") // accessing by element name
+	
+	if(uid=="")
+	{
+	// 1000 millisec = 1 sec
+		alert("userid is mandatory");
+		$("#loginButton").slideUp(5000);
+		return false;
+	}
+	else if(pass=="")
+	{
+		alert("password is mandatory");
+		$("#loginButton").slideUp(5000);
+		return false;
+	}
+	else{
+		$("#loginButton").slideDown(5000);
+		return true;	
+		}
+}
+
 
 // javascript addition method
 function add( a, b   ){
@@ -136,7 +171,12 @@ function checkUser (){
 	
 	
 }
-
+// all event listener for html
+// are tracked here
 $(document).ready(function() {
-	$("#pwd").click( checkUser );
+	$("#uid").click(changeUidColor);
 });
+
+function changeUidColor(){
+	document.getElementById("uid").style="background:yellow";
+}

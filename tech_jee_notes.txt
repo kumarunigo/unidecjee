@@ -161,5 +161,22 @@ exception handling
 	
 	
 	
+**************8 HTML and JAVA SCRIPT **********
+
+
+how does the control transfer from HTML to Javascript
+	Event listeners : mouse, keyboard, documnet
+	
+How does javascript knows what customer did on HTML
+	document.getElementById("uid").value;
+	
+	document = entire html code
+	getElementById =
+	get access to 1 particular section of your html program
 	
 	
+html and javascript are tightly coupled
+
+JQUERY - decouples html and javascript
+
+
