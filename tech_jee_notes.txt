@@ -180,3 +180,85 @@ html and javascript are tightly coupled
 JQUERY - decouples html and javascript
 
 
+<div id="parent">
+	<div id="child1">hi this is child1</div>
+	<div id="child2">hi this is child2</div>
+</div>
+
+
+
+$("#parent").html();
+	reading html code inside parent id div element
+	<div id="child1">hi this is child1</div>
+$("#child1").text();
+	reading text between opening and closing tag of child1 element
+	hi this is child1
+$("#uid").val();
+	read customer typed input inside text box called uid
+	
+OVERLOADED
+
+$("#uid").val();   // reading or accessing information
+$("#uid").val("please enter"); // writing information
+
+
+<div id="abc">
+	<div id="xyz"></div>
+	<div id="pqr"></div>
+</div>
+
+$("#xyz").sibling()
+
+
+HTML
+CSS	: use class attribute from html to access
+JavaScript : use id attribute from html to access
+Java : use name attribute from html to access
+
+userid <input type="text"	class="" id="" name="" >
+
+
+HTTP : Hyper Text Transfer Protocol
+	transfer digital package from source device to desitnation device
+Fedex : transfer package from source to destination
+
+courier : 
+	label : 
+		sender and receiver information
+		weight
+		content type
+	brown package : 
+		actual content
+	
+http :
+	header :
+	body:
+
+http status code
+	2XX : successfull transferred
+	3XX : succesfull tranfered with redirect
+	4XX : failed transfer.. client problem
+	5XX : failed transfer.. server problem
+	
+Http transaction
+	Request : data is transferred from Client to Server
+		Hi this is my userid/pwd... john/john1!
+	Response : data is transferred from Server to Client
+		userid/pwd... john/john1! is incorrect try again
+	
+Http methods : Data transfer technique
+	postcard (GET) : data is transferred in the http URL (used for images/css/js etc)
+		weight (content size): limited
+		request-content : text (from client to server)
+		not secure : anyone can see this
+		caching : enabled
+	courier box (POST)
+		weight (content size): unlimited
+		request-content : ANY digital content ( text , images, video, audio) (from client to server)
+		secure : is hidden inside the body
+		caching : disabled
+	
+https://m.media-amazon.com/images/I/813g-C07CaL._AC_SY200_.png
+request : data is sent from client  to server... text
+response : data from server to client.... image
+

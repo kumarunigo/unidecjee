@@ -174,9 +174,15 @@ function checkUser (){
 // all event listener for html
 // are tracked here
 $(document).ready(function() {
-	$("#uid").click(changeUidColor);
+	$("#uid").blur(checkUseridEntered);
 });
+function checkUseridEntered(){
+// READ what customer typed in this text box
+	var userid=$("#uid").val(); 
+	if(userid==""){
+		//WRITE message in text box
+		$("#uid").val("userid is mandatory"); 
+		$("#uid").css("background","red");
+	}
 
-function changeUidColor(){
-	document.getElementById("uid").style="background:yellow";
-}
+} 

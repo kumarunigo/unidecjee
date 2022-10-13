@@ -13,10 +13,12 @@
 	color:green;
 	font-family:helvetica;
 }
-#header{
+.header1{
 	height:10%;
 	width:98%;
 	background:green ;
+}
+.header2{
 	border:solid;
 	color:yellow;
 	font-family:arial;
