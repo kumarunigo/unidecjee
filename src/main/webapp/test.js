@@ -1,3 +1,5 @@
+
+
 function isUseridTaken(){
 	var uid=document.getElementById("uid").value;
 	if(uid=="john1234")

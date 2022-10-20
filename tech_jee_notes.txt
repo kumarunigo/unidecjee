@@ -262,3 +262,254 @@ https://m.media-amazon.com/images/I/813g-C07CaL._AC_SY200_.png
 request : data is sent from client  to server... text
 response : data from server to client.... image
 
+
+
+LoginServlet ls=new LoginServlet(); // Tomcat creates object
+ls.doget(asdas,asdsada); // service method calls this
+
+
+Servlet main methods
+
+	init : called when servlet object is being created (tomcat calls)
+	service : should i call doGet or doPost ( called by tomcat)
+	doGet : called by doService
+		actual processing is done here
+	doPost : called by doService
+		actual processing is done here
+	destroy : called by tomcat... it is called when website is being shutdown
+
+Servlet program response
+	webpage :
+		forward : return webpage from the same project
+		redirect : return webpage from external project/website/company
+	text : (character based text usually String values)
+
+	non-textual : (binary data.. images,video,audio )
+	
+	
+	
+************************ webservices *****************
+
+Apache CXF framework
+
+
+
+WSDL :
+	WebService Description Language : xml
+	
+common programming community terms
+	method : operation
+	input : arguments
+	
+		
+Writing soap webservice
+	1) Top down approach (Expert programmer)
+		create wsdl file first
+		generate java program that matches wsdl xml
+	2) Bottom up approach (beginner programmer)
+		Create java program first
+		wsdl auto generated from java program
+			xml configured
+			annotation configured = Apache CXF
+			@Webservice
+			
+Bottom up approach , using annotation
+	1) write simple program
+	2) @WebService - soap annotation
+	3) host the webservice program on http url
+	
+
+schema :
+	validation purposes
+
+
+RPC style : simple, faster soap webservice (light weight)
+	data type : simple input
+	peroformance: faster, no validation, wsdl is simple so less processing overhead
+	validation : not available(no schema)
+	
+Document style : complex data, slower(heavy weight)
+	data type: complex input data ( arraylist, complex user defined data type)
+	validation : schema is available
+	performance : slower
+	
+	
+publish/provide soap based webservice
+consume/use soap based webservice
+
+publish/provide rest based webservice
+consume/use rest based webservice
+
+	
+Rest Webservice
+	Microservice architecture
+		small related services packaged in a different project
+		Implmeneted:Rest webservice using JSON
+		
+INPUT category		
+	********* path get input ********
+		// mapping : establishing a link/map/connection between http url and method
+		@RequestMapping(value = "/add/{a}/{b}", method = RequestMethod.GET)
+		public int addition(int a, int b ){
+			int sum=a+b;
+			return sum;
+		}
+	********* key-value get input ********
+		http://localhost/sub?number1=40&number2=10
+		@RequestMapping(value = "/sub", method = RequestMethod.GET)
+		public int substract(@RequestParam int number1,@RequestParam int number2){
+			int subs=number1-number2;
+			return subs;
+		}
+	********** complex input ****
+	http://localhost/simpleInterest
+	input :
+		{
+			"principal":100000,
+			"time":60,
+			"rate":5
+		}
+
+	output :
+		int : 300000
+	
+	1) json compliant java program for complex data
+		public class SimpleInterestInput{
+			int principal;
+			int time;
+			int rate;
+			// get set method (encapsulation methods)
+		}
+	2) create program
+	@RequestMapping(value = "/simpleInt", method = RequestMethod.POST,
+	 consumes = MediaType.APPLICATION_JSON_VALUE
+	)
+	public int calculateSimpleInterest(@RequestBody  SimpleInterestInput  si){
+		int result= si.principal * si.time * si.rate / 100;
+		return result;
+	}
+	
+		Jackson Mapper
+		Output customr need is JSON
+		Java objects into JSON data conversion ( produces=json)
+			get method from java program to transfer into json
+			read value from java and update in json data
+		Input customer sent is JSON
+		JSON data into Java object conversion (consumes=json)
+			read value from json data and update (set) in java variable
+	
+********* complex output ********	
+	http://localhost/allMath/10/40
+	input : simple.. in url.... GET
+	output : complex json
+	{
+		"sum":60,
+		"sub":40,
+		"mul" :500,
+		"div":5
+	}
+	
+	1) create JSON compliant java program for the above complex output
+	
+	public class ComplexOutput{
+		int sum=60;
+		int sub=40;
+		int mul=500;
+		int div=5;
+		// get and set method
+	}
+	
+	2) create rest webservice
+	http://localhost/allMath/50/10
+	@RequestMapping(value = "/allMath/{a}/{b}", method = RequestMethod.GET,
+	 produces = MediaType.APPLICATION_JSON_VALUE
+	)
+	public ComplexOutput allMathOperations(int a, int b ){
+		ComplexOutput result=new ComplexOutput ();
+		result.sum=a+b;
+		result.sub=a-b;
+		result.mul=a*b;
+		result.div=a/b;
+		return result;
+	}
+	
+******* consuming webservices **********	
+Get
+	Http url + input : http://localhost/add/10/20
+	output : 30
+int res=getClient.getForObject("http://localhost/add/10/30", 
+						Integer.class);
+			
+Post
+	http url : http://localhost/simpleInt
+	input : { "principal":200000, "time":120, "rate":2 }
+	output : 30
+SimpleInterestInput si=new SimpleInterestInput ();
+	si.principal=200000; si.time=120; si.rate=2;
+int res=getClient.postForObject("http://localhost/simpleInt", 
+					si
+					, Integer.class);
+	
+WSDL : describing(documenting) soap webservice
+Swagger : document and testing rest webservice
+	
+
+		
+XML : meta data = information about data
+extensible markup language
+
+ny chicago
+dfsdfs sdfdsf sfs df 324234
+<flight>
+	<src>ny</src>
+	<dest>chicago</dest>
+</flight>
+
+@RestController
+public class Calculator{
+	
+	http://localhost/
+	http://www.facebook.com/
+	http://www.amazon.com/addition/10/20
+	@RequestMapping( value="/addition/{a}/{b}" , 
+	method = RequestMethod.GET  )
+	public int add(@PathVariable int a,@PathVariable int b){
+		int sum=a+b;
+		return sum;
+	}
+	
+}
+
+Server side program : java program that are accessed
+or used from the internet
+accessing something on internet we need http url
+to access java program on internet we need http url
+
+servlet - server side program
+soap - server side program
+rest -  server side program
+
+
+webservice Testing softwares
+	soap ui : testing soap webservice
+	swagger : testing and documenting both get/post rest webservice
+	postman : testing both get/post rest webservice
+	browser : testing both get rest webservice
+
+http://localhost/allMathOperation/10/2
+output of json
+{
+	"sum":12,
+	"sub":8,
+	"mul":20,
+	"div":5
+}
+1) create json output compliant java program
+
+public class output{
+	int sum;
+	int sub;
+	int mul;
+	int div;
+	// create get set method
+}
